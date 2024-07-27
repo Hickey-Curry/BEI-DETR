@@ -47,3 +47,6 @@ To evaluate BEI-DETR with a single GPU run:
 ```
 python main.py --batch_size 2 --no_aux_loss --eval --resume /path/to/best.pth --coco_path /path/to/coco
 ```
+
+## Reference
+[https://github.com/Megvii-BaseDetection/YOLOX](https://github.com/facebookresearch/detr)
