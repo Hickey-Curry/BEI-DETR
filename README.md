@@ -22,3 +22,28 @@ That's it, should be good to train and evaluate detection models.
 ```
 pip install git+https://github.com/cocodataset/panopticapi.git
 ```
+
+## Data preparation
+We expect the directory structure to be the following:
+```
+path/to/coco/
+  annotations/  # annotation json files
+  train2017/    # train images
+  train-EEG     # train EEG data
+  train-EYE     # train EYE images
+  val2017/      # val images
+  val-EEG       # val EEG data
+  val-EYE       # val EYE images
+```
+
+## Training
+To train BEI-DETR with 8 gpus for 500 epochs run:
+```
+python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py --coco_path /path/to/coco 
+```
+
+## Evaluation
+To evaluate BEI-DETR with a single GPU run:
+```
+python main.py --batch_size 2 --no_aux_loss --eval --resume /path/to/best.pth --coco_path /path/to/coco
+```
