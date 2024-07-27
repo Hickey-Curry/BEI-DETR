@@ -49,4 +49,4 @@ python main.py --batch_size 2 --no_aux_loss --eval --resume /path/to/best.pth --
 ```
 
 ## Reference
-[https://github.com/Megvii-BaseDetection/YOLOX](https://github.com/facebookresearch/detr)
+https://github.com/facebookresearch/detr
